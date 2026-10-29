@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <!-- Xposed 模块声明（LSPosed 靠这三行识别） -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="@string/module_desc" />
+        <!--
+            xposedminversion 从 93 降到 82（v1.7）。
+            我们只用到 XposedBridge / XposedHelpers 这些 r82 就有的接口，
+            把门槛写高没有任何好处 —— 反而会在 LSPosed API 版本偏低的设备上
+            被判定「模块需要更高版本」而整个不加载，表现出来就是「装了什么都没变」。
+        -->
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+        <!-- 预设作用域：装好后 LSPosed 里默认只勾选公考雷达 -->
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/xposed_scope" />
+
+        <!--
+            v1.7.2：撤掉 v1.7.1 的 activity-alias。
+            aapt2 打包的 alias 在部分安装器/桌面不被识别为 launchable（badging 里
+            连 launchable-activity 行都没有），表现为装不上或桌面没图标。
+            回到 MainActivity 直接做入口，「隐藏桌面图标」改为切换本组件的
+            enabled 状态 —— 恢复需要 root（pm enable）或卸载重装，LSPosed 用户都满足。
+        -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

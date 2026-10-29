@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">公考雷达去广告</string>
+    <string name="module_desc">适配公考雷达 6.7.3.1：拦截 TopOn/穿山甲/优量汇/快手/百度/倍孜/美数/ubix 等广告域名，短路信息流与插屏加载，隐藏自营广告卡片。</string>
+</resources>

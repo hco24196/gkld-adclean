@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 外圈 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:pathData="M54,30 A24,24 0 1,1 54,78 A24,24 0 1,1 54,30" />
+    <!-- 内圈 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeAlpha="0.65"
+        android:pathData="M54,42 A12,12 0 1,1 54,66 A12,12 0 1,1 54,42" />
+    <!-- 扫描线 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M54,54 L73,40" />
+    <!-- 中心点 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,50 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <!-- 斜杠：表示"已屏蔽" -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF5252"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M36,72 L72,36" />
+</vector>

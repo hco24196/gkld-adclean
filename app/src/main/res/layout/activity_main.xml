@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公考雷达 · 去广告"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="LSPosed 模块 · 适配 6.7.3.1 (com.maidu.gkld)"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:lineSpacingExtra="6dp"
+            android:padding="16dp"
+            android:text="三步启用\n1. LSPosed 管理器「模块」里启用本模块\n2. 作用域勾选：公考雷达\n3. 强行停止公考雷达后重新打开"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF"
+            android:lineSpacingExtra="6dp"
+            android:padding="16dp"
+            android:text="拦截对象\n· 聚合中介 TopOn（*.anythinktech.com），开屏、信息流、插屏都经它下发\n· 穿山甲 / 优量汇 / 快手 / 百度 / 倍孜 / 美数 / FL-1rtb / ubix SSP / Gameley\n· 自营信息流广告卡片（AdCenterViewHolder）直接从列表抹掉\n\n设计取舍\n· 开屏只拦域名不短路方法：短路会让 SDK 的超时计时器不启动，开屏页可能一直转圈\n· App 被网易易盾加固，所有类都在加载后才接管，不会抢在解密前崩\n\n查看效果\nLSPosed 管理器 → 日志 → 搜索 GkldAdClean"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_lsposed"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/brand"
+            android:text="打开 LSPosed 管理器"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="隐藏桌面图标"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="隐藏后想找回：root 终端执行 pm enable com.gkld.adclean/.ui.MainActivity，或卸载后重装"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switch_hide_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_copy_tag"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#E6E9EF"
+            android:text="复制日志关键字"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="仅拦截广告请求，不修改业务逻辑、不绕过付费内容。激励视频（看广告换权益）保持原样。App 更新后类名可能变化，需按 README 重新适配 Config。"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</ScrollView>
